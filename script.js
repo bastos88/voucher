@@ -150,10 +150,9 @@ function createVoucher(reservation, idPrefix = "voucher") {
   const background = product.background || layout.background;
   voucher.style.setProperty("--body-tone", background.bodyTone);
   voucher.style.setProperty("--stub-tone", background.stubTone);
-  for (const photo of voucher.querySelectorAll('[data-image="background"], [data-image="seam-background"]')) {
-    photo.hidden = !background.image;
-    if (background.image) photo.src = background.image;
-  }
+  const photo = voucher.querySelector('[data-image="background"]');
+  photo.hidden = !background.image;
+  if (background.image) photo.src = background.image;
 
   const logo = voucher.querySelector('[data-image="supplier-logo"]');
   logo.hidden = !supplier.logo;

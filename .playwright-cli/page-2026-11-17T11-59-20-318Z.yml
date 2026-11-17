@@ -1,0 +1,68 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "Iberia Selection — vouchers" [ref=f1e3] [cursor=pointer]:
+      - /url: ./index.html
+      - img "Iberia Selection" [ref=f1e4]
+    - generic [ref=f1e5]: Vouchers
+  - main [ref=f1e6]:
+    - region "Pré-visualização de vouchers" [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - heading "Pré-visualização de vouchers" [level=1] [ref=f1e9]
+        - paragraph [ref=f1e10]: Selecione a reserva para pré-visualizar e imprimir.
+      - generic [ref=f1e11]:
+        - generic [ref=f1e12]:
+          - generic [ref=f1e13]: Variante
+          - combobox "Variante" [ref=f1e14]:
+            - option "Single FCP" [selected]
+            - option "Grupo FCP"
+            - option "Genérico"
+            - option "Douro com imagem"
+        - button "Imprimir voucher" [ref=f1e15] [cursor=pointer]
+    - region "Pré-visualização do voucher" [ref=f1e16]:
+      - article [ref=f1e18]:
+        - generic [ref=f1e20]:
+          - generic [ref=f1e21]:
+            - generic [ref=f1e22]:
+              - generic [ref=f1e23]:
+                - generic [ref=f1e24]:
+                  - paragraph [ref=f1e25]: Produto ou serviço reservado
+                  - paragraph [ref=f1e26]:
+                    - text: Opção reservada
+                    - strong [ref=f1e27]: Museu
+                - heading "Bilhete Museu Adulto" [level=2] [ref=f1e28]
+              - generic [ref=f1e29]:
+                - paragraph [ref=f1e30]: Pessoa principal
+                - paragraph [ref=f1e31]: António Joaquim
+                - region "Número de pessoas" [ref=f1e32]:
+                  - paragraph [ref=f1e33]:
+                    - strong [ref=f1e34]: 1 Pessoa
+            - region "Produtos reservados" [ref=f1e35]:
+              - list [ref=f1e36]:
+                - listitem [ref=f1e37]:
+                  - generic [ref=f1e38]: 1 ×
+                  - generic [ref=f1e39]: Bilhete Museu Adulto
+          - generic [ref=f1e40]:
+            - generic [ref=f1e41]:
+              - term [ref=f1e42]: Data e hora da visita
+              - definition [ref=f1e43]:
+                - time [ref=f1e44]: 21/11/2026
+                - text: · 10:30
+            - generic [ref=f1e45]:
+              - term [ref=f1e46]: Ref. MFCP
+              - definition [ref=f1e47]: MFCP-2026-00842
+            - generic [ref=f1e48]:
+              - term [ref=f1e49]: Tipo de pagamento
+              - definition [ref=f1e50]: Pré-pago
+          - generic [ref=f1e51]:
+            - img "Iberia Selection" [ref=f1e52]
+            - img "Museu FC Porto" [ref=f1e55]
+        - complementary "Código da emissão" [ref=f1e56]:
+          - paragraph [ref=f1e57]:
+            - generic [ref=f1e58]: Saiba como
+            - generic [ref=f1e59]: utilizar o
+            - generic [ref=f1e60]: voucher
+          - figure "QR de demonstração" [ref=f1e61]:
+            - img "QR de demonstração" [ref=f1e62]
+          - generic [ref=f1e64]:
+            - paragraph [ref=f1e65]: Referência da emissão
+            - strong [ref=f1e66]: IS-2026-00128
