@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vouchers | Iberia Selection</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="./index.html" aria-label="Iberia Selection — vouchers">
+      <img src="assets/iberia-selection.svg" alt="Iberia Selection" width="122" height="76">
+    </a>
+    <span>Vouchers</span>
+  </header>
+  <main>
+    <section class="preview-controls" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">Pré-visualização de vouchers</h1>
+        <p>Selecione a reserva para pré-visualizar e imprimir.</p>
+      </div>
+      <div class="preview-actions">
+        <div class="select-field">
+          <label for="example-select">Variante</label>
+          <select id="example-select">
+            <option value="single">Single FCP</option>
+            <option value="grupo">Grupo FCP</option>
+            <option value="barco">Genérico</option>
+            <option value="douro">Douro com imagem</option>
+          </select>
+        </div>
+        <button id="print-button" type="button" disabled>Imprimir voucher</button>
+      </div>
+    </section>
+    <section class="preview-stage" aria-label="Pré-visualização do voucher" tabindex="0">
+      <div id="voucher-container"></div>
+    </section>
+    <noscript>Ative o JavaScript para carregar os exemplos de vouchers.</noscript>
+  </main>
+
+  <!-- Uma só estrutura, com a mesma geometria em todas as variantes. -->
+  <template id="voucher-template">
+    <article class="voucher">
+      <img class="voucher-photo" data-image="background" alt="" hidden>
+      <div class="voucher-overlay" aria-hidden="true"></div>
+      <div class="voucher-seam" aria-hidden="true">
+        <img class="voucher-photo" data-image="seam-background" alt="" hidden>
+        <div class="voucher-seam-tint"></div>
+      </div>
+      <section class="voucher-body">
+        <div class="reservation-main">
+          <div class="reservation-identity">
+            <header class="reservation-heading" data-region="Produto ou serviço">
+              <div class="offer-context">
+                <p class="field-label">Produto ou serviço reservado</p>
+                <p class="reserved-option" data-region="Opção reservada"><span class="field-label">Opção
+                    reservada</span> <strong data-field="reserved-option"></strong></p>
+              </div>
+              <h2 class="product-name" data-field="product-name"></h2>
+            </header>
+            <div class="holder" data-region="Titular ou grupo">
+              <p class="field-label" data-field="holder-label"></p>
+              <p class="holder-name" data-field="holder-name"></p>
+              <section class="participants" aria-label="Número de pessoas" data-region="Participantes">
+                <p class="participants-summary"><strong class="participant-total"
+                    data-field="participant-total"></strong><span class="participant-categories"
+                    data-field="participant-categories"></span></p>
+              </section>
+            </div>
+          </div>
+          <section class="reserved-items" aria-label="Produtos reservados" data-region="Produtos reservados">
+            <ul class="items-list" data-list="items"></ul>
+          </section>
+        </div>
+        <dl class="booking-details">
+          <div data-region="Data e hora">
+            <dt class="field-label" data-field="date-label"></dt>
+            <dd><time data-field="date"></time><span class="visit-time" data-field="time"></span></dd>
+          </div>
+          <div data-region="Referência do fornecedor">
+            <dt class="field-label" data-field="reference-label"></dt>
+            <dd data-field="supplier-reference"></dd>
+          </div>
+          <div data-region="Tipo de pagamento">
+            <dt class="field-label">Tipo de pagamento</dt>
+            <dd data-field="payment"></dd>
+          </div>
+        </dl>
+        <footer class="voucher-brands" data-region="Marcas">
+          <img class="iberia-logo" src="assets/iberia-selection.svg" alt="Iberia Selection" width="181" height="112">
+          <span class="brand-divider" aria-hidden="true"></span>
+          <div class="supplier-brand">
+            <img class="supplier-logo" data-image="supplier-logo" alt="" hidden>
+            <span class="supplier-wordmark" data-field="supplier-wordmark"></span>
+          </div>
+        </footer>
+      </section>
+      <aside class="voucher-stub" aria-label="Código da emissão">
+        <p class="stub-heading"><span>Saiba como</span><span>utilizar o</span><span>voucher</span></p>
+        <figure class="qr-card">
+          <img data-image="qr" alt="" width="296" height="296">
+          <figcaption data-field="qr-caption"></figcaption>
+        </figure>
+        <div class="issue-reference" data-region="Referência da emissão">
+          <p>Referência da emissão</p>
+          <strong data-field="issue-reference"></strong>
+        </div>
+      </aside>
+    </article>
+  </template>
+</body>
+
+</html>
