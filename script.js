@@ -36,15 +36,15 @@ const fcpBackground = {
 // Só os dados, os rótulos e o fundo variam. A geometria vem de styles.css.
 const layouts = {
   "single-fcp": {
-    label: "Single FCP", holderLabel: "Pessoa principal", dateLabel: "Data e hora da visita",
+    label: "Single FCP", dateLabel: "Data e hora da visita",
     referenceLabel: "Ref. MFCP", background: fcpBackground
   },
   "grupo-fcp": {
-    label: "Grupo FCP", holderLabel: "Nome do grupo", dateLabel: "Data e hora da visita",
+    label: "Grupo FCP", dateLabel: "Data e hora da visita",
     referenceLabel: "Ref. MFCP", background: fcpBackground
   },
   generico: {
-    label: "Genérico", holderLabel: "Cliente ou grupo", dateLabel: "Data e hora do serviço",
+    label: "Genérico", dateLabel: "Data e hora do serviço",
     referenceLabel: "Ref. do fornecedor",
     // Fundo neutro configurável, com dois tons da mesma cor.
     background: { image: null, bodyTone: "#293e40", stubTone: "#526f72" }
@@ -133,13 +133,12 @@ function createVoucher(reservation, idPrefix = "voucher") {
     .format(new Date(year, month - 1, day));
   const fields = {
     "product-name": product.name, "reserved-option": reservation.reservedOption,
-    "holder-label": layout.holderLabel, "holder-name": reservation.holderName,
+    "holder-name": reservation.holderName,
     "participant-total": product.layoutKey === "single-fcp" && summary.total === "1 pessoa" ? "1 Pessoa" : summary.total,
     "participant-categories": product.layoutKey === "single-fcp" ? "" : summary.categories,
     "date-label": layout.dateLabel, date, time: reservation.time,
     "reference-label": layout.referenceLabel, "supplier-reference": reservation.supplierReference,
     payment, "supplier-wordmark": supplier.name,
-    "qr-caption": reservation.qr.isDemo ? "QR de demonstração" : "QR da reserva",
     "issue-reference": reservation.issueReference
   };
   for (const [name, value] of Object.entries(fields)) {
